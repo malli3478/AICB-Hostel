@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>PES_BH|Employee LogIn</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style2.css" rel="stylesheet">		
+		<style>
+			body
+			{
+			    background-image: url("bg5.jpg");
+	    		background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-static-top navbar-wrapper">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+				  <a class="navbar-brand">
+				    <img alt="PES" src="logo3.png">
+				  </a>
+
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">PES Boys Hostel</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav nav-pills">
+		        <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+		        <li><a href="about.html">About</a></li>
+		        <li><a href="contacts.html">Contacts</a></li>
+		       
+		      </ul>
+		      <form action="sign.php" class="navbar-form navbar-right">
+		     	<button type="button" class="btn btn-default btn-inactive" data-toggle="modal" data-whatever="@mdo">Log in</button>
+		      </form>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+
+
+
+
+		<!-- Begin SignUp/SignIn -->
+
+		<div style="padding-bottom:25%">
+			<div class="container col-md-5 col-md-offset-1">
+				<section class="login">
+					<link rel="stylesheet" type="text/css" href="css/loginstyle.css"/>
+					<div class="titulo">Create your account</div>
+					<form action="register.php" method="post" enctype="application/x-www-form-urlencoded">
+						<input type="text" name="name" required title="Your name" placeholder="Name">
+		    			<input type="text" name="uid" required title="UserID required" placeholder="USN / Emp.ID">
+		    			<input type="text" name="email" required title="E-mail ID required" placeholder="E-mail ID">
+		       			<input type="password" name="pswd" required title="Password required" placeholder="Password" data-icon="x">
+		       			<input type="password" name="cpswd" required title="Confirm password" placeholder="Confirm password" data-icon="x">
+		       			<input type="submit" class="enviar" value="Register" method="post" action="register.php"/>
+		    		</form>
+				</section>
+			</div>
+			<br>
+			<div class="container col-md-6">
+				<section class="login">
+					<link rel="stylesheet" type="text/css" href="css/loginstyle.css"/>
+					<div class="titulo">Enter Login credentials</div>
+					<form action="login.php" method="post" enctype="application/x-www-form-urlencoded">
+		    			<input type="text" name="uid" required title="UserID required" placeholder="USN / Emp.ID" data-icon="U">
+		       			<input type="password" name="pswd" required title="Password required" placeholder="Password" data-icon="x">
+		        		<div class="olvido">		        		
+		       			<input type="submit" class="enviar" value="Log in" method="post" action="login.php"/>
+		    		</form>
+				</section>
+			</div>
+		</div>
+
+		<!-- End SignUp/SignIn -->
+
+
+
+
+
+
+		<!-- Footer begin -->
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h4>Contact Address</h4>
+						<address>
+							PESIT Campus, 100 Feet Ring Road,<br>
+							BSK 3rd Stage, Hosakerelli,<br>
+							Bangalore - 560 085
+						</address>
+					</div>
+				</div>
+			<div class="bottom-footer">
+				<div class="col-md-5">© PES Institutions - All rights reserved.</div>
+					<div class="col-md-7">
+						<ul class="footer-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contacts.html">Contacts</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Footer end -->
+
+
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

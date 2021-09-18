@@ -1,0 +1,21 @@
+<!--
+Creating and modifying HTML using innerHTML
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>innerHTML demo</title>
+</head>
+<body>
+	<h1 title="click me to change" id="h">This is my heading</h1>
+	<script type="text/javascript">
+	x = document.getElementById("h");
+	x.addEventListener("click",changeMe);	
+
+	function changeMe()
+	{
+		x.innerHTML = "Hey there, I am Mallikarjun !"
+	}
+	</script>
+</body>
+</html>

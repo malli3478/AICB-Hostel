@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WT|Assignment 2</title>
+		<style type="text/css">
+			body
+			{
+				background-color: #cdf;
+			}
+			a
+			{
+				text-decoration: none;
+				color: yellow;
+			}
+			a:hover
+			{
+				color: white;
+				font-size: 30px;
+			}
+			label
+			{
+				color: white;
+			}
+			span#d
+			{
+				color: white;
+			}
+			div#but:hover 
+			{
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			a = document.getElementsByTagName("a");
+			a.onmouseover = changelinkcolor();
+			//a.addEventListener("mouseover",changelinkcolor)
+			function changelinkcolor()
+			{
+				//alert("hi");
+				a.style.color="white";
+			}
+		</script>
+		<meta name="theme-color" content="purple"/>
+	</head>
+	<body onload="load()">
+		<header align="center" style="padding:0;margin:0;">
+			<img src="image.png" style="width:25%;" />
+		</header>
+		<div align="center" style="border:3px solid;margin-top:0px;margin-top:10px;margin-bottom: 10px;margin-left:60px;margin-right:60px;box-shadow: -3px -3px 100px 3px; border-radius:10px;">
+			<h1 style="color:white;">
+				This is the second 
+				<span style="color:yellow;">
+					<i>
+						<u>
+							Web Technologies
+						</u>
+					</i>
+				</span>
+				 assignment
+			</h1>
+			<a href="events.html">Class assignment on events</a>
+			<h2>
+				<a id="l1" href="http://localhost/pesh">
+					PES Boys' hostel Projrct:
+				</a>
+			</h2>
+			<nav style="padding: -30px;width:75%;border:1px solid lightgreen;font-size:25px;">
+				<b>
+					<a id="l1" href="http://localhost/pesh/">Home</a> <span id="d">|</span>
+					<a id="l2" href="http://localhost/pesh/about.php">About</a> <span id="d">|</span>
+					<a id="l3" href="http://localhost/pesh/contacts.php">Contact us</a> <span id="d">|</span>
+					<a id="l4" href="http://localhost/pesh/sign.php">Sign up / Sign in</a>
+				</b>
+			</nav>
+
+			<hr/><br/><br/>
+			<img id="top" src="photo.jpg" style="width:45%;height:auto;border-radius:600px;" alt="Image"/>
+			<br/><br/>
+
+			<label>
+				Chand sifarish - Fanaa :- Keyboard instrumental with kareoke [by Mallikarjun]
+			</label>
+			<br/><br/>
+			<audio id="aud" controls style="width:80%;">
+				<source src="Chand Sifarish - Keyboard Instrumental with Kareoke.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+			</audio>
+			<br/>
+			<br/>
+			<hr/>
+
+			<label>
+				<h3>
+					An introductory episode - Basic theory of Indian Classical Music [By Anuja Kamat]
+				</h3>
+			</label>	
+			<video id="vid" style="width:80%;height:auto;border:3px solid; border-radius:3px;box-shadow:3px 3px 10px 3px;" controls>
+				<source src="1. Introductory episode Basic theory of Indian Classical Music.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+
+			<br/>
+			<canvas id="can" style="height:100%;width:100%;position: fixed;top:0;left:0;border:0;">
+				Your browser does not support the HTML5 canvas tag.
+			</canvas>
+			<br/>
+			<div id="but" style="width:10%;border:2px solid yellow;border-radius:5px;">
+				<a href="#top">My photo</a>
+			</div>
+			<br/>
+			
+		</div>
+		<footer align="center" style="color:peachpuff;">
+			PES Institute of Technology, BSK 3rd Stage,	Bangalore-85<br/>
+		</footer>
+		<script>
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			if(navigator.platform!="Win32")
+			{
+				//alert("Android");
+				document.getElementById("l1").href = "http://192.168.137.1/pesh/";
+				document.getElementById("l2").href = "http://192.168.137.1/pesh/about.php";
+				document.getElementById("l3").href = "192.168.137.1/pesh/contacts.php";
+				document.getElementById("l4").href = "http://192.168.137.1/pesh/sign.php";
+			}
+			if (navigator.platform!="Win32" && w>h) 
+			{
+				//alert("Please rotate your device");
+			}
+			vid.addEventListener("mouseover",onover);
+			vid.addEventListener("mouseout",onout);
+			function  onover()
+			{
+				vid.play();
+			}
+			function onout()
+			{
+				vid.pause();
+			}
+			function load()
+			{
+				document.getElementById("aud").currentTime = 7;
+				document.getElementById("aud").volume = 0.50;
+				document.getElementById("aud").play();
+			}
+			document.getElementById("can").style.zIndex = "-1";
+			var c = document.getElementById("can");
+			var ctx = c.getContext("2d");
+			var grd = ctx.createLinearGradient(0,0,0,h/4.25);
+			if(h>w)
+				grd = ctx.createLinearGradient(0,0,0,h/8.5);
+			var grd2 =ctx.createLinearGradient(0,0,0,h);
+			grd.addColorStop(0, "purple");
+			grd.addColorStop(0.5, "#9E9E9E");
+			grd.addColorStop(1, "green");
+			ctx.fillStyle = grd;
+			ctx.fillRect(0, 0, w, h*100);
+		</script>
+	</body>
+</html>
+
+<!--
+
+	Concepts asked to be implemented:
+	-> Internal link: My photo ; External links :class assignment, PESBH project 
+	-> Mouse events: onmouseover/out on video ; Other event : find in class assignment
+	-> Images: Logo , Photo
+	-> Styles , Colors
+	-> Canvas: Background; Audio and Videos included 
+	-> Semantic tags: img, header, footer, nav
+
+-->

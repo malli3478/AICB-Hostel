@@ -1,0 +1,44 @@
+<!--
+Use 2 or 3 event handlers
+-->
+<html>
+	<head>
+		<title>Events</title>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<p id="b11">PPPP</p>
+		<input type="text" id="inp1" name=""/>
+		<br/>
+		<button id="b1">
+			See what happens when you click me
+		</button>
+		<script type="text/javascript">
+			x = document.getElementById("b1");
+			y = document.getElementById("inp1");
+			x.addEventListener("click",onClick);
+			y.addEventListener("focus",onFocus);
+			//y.onblur=onBlur();
+			y.addEventListener("blur",onBlur);
+			//x.addEventListener("click",function(){ alert("Hello World!"); });
+			function onLoad()
+			{
+				alert("loaded");
+			}
+			function onFocus()
+			{
+				alert("input element focused"); 
+			}
+			function onBlur()
+			{
+				alert("Focus out of input element"); 
+			}
+			function onClick()
+			{
+				alert("You clicked on the button"); 
+			}
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- Display Blogs begin -->
+
+<?php  
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "tripplan";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error)
+	{
+	    die("Connection failed: " . $conn->connect_error);
+	} 
+
+    $search = $_POST['search'];
+    $query  = "SELECT * FROM blogs";
+    $result = mysqli_query($conn,$query);
+    $counter = 0;
+    $z=0;
+    while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
+    {
+	    $id[$counter] = $row['roll_number'];
+	    $counter = $counter + 1;
+    }
+?>
+
+<table border="1" id="table1" >
+
+<?php
+    if($counter>0)
+    {
+        for($z=0;$z<$counter;$z++)
+        {
+        	echo "<div>"
+            if($z<$counter)
+            {
+        		echo "<P>"
+            	echo $id[$z]?>                            
+            	echo "</P>"
+            }
+            $z = $z + 1;
+            echo "</div><br>"
+        }
+    }
+?>
+</table>
+
+<!-- Display Blogs end -->
